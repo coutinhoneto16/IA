@@ -45,6 +45,20 @@ if __name__ == '__main__':
         ([1,1], 1),
     ]
 
+    dados_custom = [
+        ([0,0], 0),
+        ([0,1], 0),
+        ([1,0], 1),
+        ([1,1], 1),
+    ]
+
+    dados_xor = [
+        ([0,0], 0),
+        ([0,1], 1),
+        ([1,0], 1),
+        ([1,1], 0),
+    ]
+
     print("Treinando AND:")
     n_and = Neuronio(2)
     n_and.treinamento(dados_and, n_loops=100)
@@ -57,3 +71,7 @@ if __name__ == '__main__':
     n_or.treinamento(dados_or, n_loops=100)
     for x, _ in dados_or:
         print(x, " -> ", n_or.teste(x))
+
+    print ("\n Treinando A ou (A e B)")
+    n_custom = Neuronio(2)
+    n_custom.treinamento(dados_custom, n_loops=100)
