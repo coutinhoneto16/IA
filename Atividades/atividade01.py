@@ -72,6 +72,15 @@ if __name__ == '__main__':
     for x, _ in dados_or:
         print(x, " -> ", n_or.teste(x))
 
-    print ("\n Treinando A ou (A e B)")
+    print ("\nTreinando A ou (A e B)")
     n_custom = Neuronio(2)
     n_custom.treinamento(dados_custom, n_loops=100)
+    for x, _ in dados_custom:
+        print(x, " -> ", n_custom.teste(x))
+
+    print("\nTreinando XOR") #não funciona, independente do numero de loops que eu tente adicionar na chamada,
+    # o resultado sempre muda, mas nunca está correto
+    n_xor = Neuronio(2)
+    n_xor.treinamento(dados_xor, n_loops=500)
+    for x, _ in dados_xor:
+        print(x, " -> ", n_xor.teste(x))
